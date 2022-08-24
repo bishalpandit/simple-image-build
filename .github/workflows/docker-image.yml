@@ -29,8 +29,8 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build . -t ghcr.io/simple-image-build:${{ github.sha }}
+        docker build . -t ghcr.io/bishalpandit/simple-image-build:${{ github.sha }}
         
     - name: Push Docker Image
       run: |
-        docker push ghcr.io/simple-image-build:${{ github.sha }}
+        docker push ghcr.io/bishalpandit/simple-image-build:${{ github.sha }}
