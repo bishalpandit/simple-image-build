@@ -33,4 +33,4 @@ jobs:
         
     - name: Push Docker Image
       run: |
-        docker push ${{ env.REGISTRY }}/simple-image-build:${{ github.sha }}
+        docker push ghcr.io/simple-image-build:${{ github.sha }}
