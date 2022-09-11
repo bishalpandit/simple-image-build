@@ -27,7 +27,7 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build . -t ghcr.io/bishalpandit/simple-image-build:${{ github.sha }}
+        docker build . --network=host -t ghcr.io/bishalpandit/simple-image-build:${{ github.sha }}
         
     - name: Push Docker Image
       run: |
