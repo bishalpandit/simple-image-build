@@ -11,5 +11,6 @@ jobs:
     steps:
     - uses: actions/checkout@v3
 
-    - name: Say hello
-      run: echo ${{github.ref}}
+    - name: Set destination branch - Push or merge to master
+      if: (github.event.inputs.dest_env == '' && github.ref_name == 'main')
+      run: echo "main"
