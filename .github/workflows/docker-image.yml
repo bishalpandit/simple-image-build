@@ -9,10 +9,9 @@ on:
   workflow_dispatch:
 
 jobs:
-
   build:
     if: |
-      !(github.event_name == 'pull_request' && 
+      !(github.event_name == 'pull_request_target' && 
       github.event.pull_request.merged == false)
     runs-on: ubuntu-latest
     steps:
