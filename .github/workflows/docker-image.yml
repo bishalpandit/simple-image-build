@@ -3,7 +3,7 @@ name: Test
 on:
   push:
     branches: [ "main" ]
-  pull_request:
+  pull_request_target:
     types:
       - closed
   workflow_dispatch:
@@ -11,11 +11,12 @@ on:
 jobs:
 
   build:
-
+    if: |
+      !(github.event_name == 'pull_request' && # if pull_request is just closed
+      github.event.pull_request.merged == false)
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
 
     - name: Say hello
-      run: cat ${{github}}
+      run: echo ${{github.ref}}
