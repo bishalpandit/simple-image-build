@@ -12,5 +12,5 @@ jobs:
     - uses: actions/checkout@v3
 
     - name: Set destination branch - Push or merge to master
-      if: (github.event.inputs.dest_env == '' && ${{github.ref_name == 'release/*'}})
+      if: (github.event.inputs.dest_env == '' && github.ref_name == ${{release/*}})
       run: echo "main"
